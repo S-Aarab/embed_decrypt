@@ -13,7 +13,7 @@ A simple rust API to decrypt encrypted embed sources.
 
 
 ## Prerequisites
-- [Ts-Node](https://www.npmjs.com/package/ts-node)
+- [NodeJS](https://nodejs.org)
 - [Cargo](https://www.rust-lang.org/tools/install)
 
 ## Quick Start

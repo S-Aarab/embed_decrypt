@@ -17,13 +17,12 @@ RUN --mount=type=cache,target=/app/target \
     cargo build --release && \
     cp ./target/release/embed_decrypt /app/embed_decrypt
 
-# Copy TypeScript files and install dependencies
-COPY package.json package-lock.json tsconfig.json rabbit.ts ./
+# Copy JavaScript/TypeScript files and install dependencies
+COPY package.json package-lock.json tsconfig.json rabbit.js ./
 
 RUN apt-get update && apt-get install -y curl && \
     curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
     apt-get install -y nodejs && \
-    npm install -g ts-node && \
     npm install
 
 # Final Stage: Runtime Environment
@@ -32,12 +31,11 @@ FROM debian:bookworm-slim AS final
 RUN adduser --disabled-password --gecos "" --uid 10001 appuser && \
     apt-get update && apt-get install -y curl && \
     curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
-    apt-get install -y nodejs && \
-    npm install -g ts-node
+    apt-get install -y nodejs
 
-# Copy Rust binary and TypeScript dependencies
+# Copy Rust binary and JavaScript dependencies
 COPY --from=builder /app/embed_decrypt /app/embed_decrypt
-COPY --from=builder /app/rabbit.ts /app/rabbit.ts
+COPY --from=builder /app/rabbit.js /app/rabbit.js
 COPY --from=builder /app/tsconfig.json /app/tsconfig.json
 COPY --from=builder /app/package.json /app/package.json
 COPY --from=builder /app/package-lock.json /app/package-lock.json
