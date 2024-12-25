@@ -8,7 +8,7 @@ A simple rust API to decrypt encrypted embed sources.
 - [Quick Start](#quick-start)
     - [Installation](#installation)
     - [Running the Server](#running-the-server)
-    - [Routes](#routes)
+    - [API Routes](#api-routes)
 - [License](#license)
 
 
