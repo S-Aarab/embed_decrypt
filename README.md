@@ -91,5 +91,18 @@ curl -X GET "http://localhost:3000/embed?embed_url=https://pepepeyo.xyz/v2/embed
 }
 ```
 
+### Docker 
+Docker image is available at [Docker Hub](https://hub.docker.com/r/eatmynerds/embed_decrypt).
+
+run the following command to pull and run the docker image.
+
+```sh
+$ docker pull eatmynerds/embed_decrypt
+$ docker run -p 3000:3000 eatmynerds/embed_decrypt
+```
+This will start the server on port 3000. You can access the server at http://localhost:3000/, And can change the port by changing the -p option to `-p <port>:3000`.
+
+You can add `-d` flag to run the server in detached mode.
+
 ## License
 This project is licensed under the [MIT License](./LICENSE).
