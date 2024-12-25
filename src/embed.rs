@@ -27,8 +27,8 @@ pub struct Track {
 
 pub fn handle_embed(embed_url: &str, referrer: &str) -> EmbedSources {
     // ts-node rabbit.ts --embed-url="https://pepepeyo.xyz/v2/embed-4/DcwrA8YHCpgF?z=" --referrer="https://flixhq.to"
-    let output = Command::new("ts-node")
-        .arg("rabbit.ts")
+    let output = Command::new("node")
+        .arg("rabbit.js")
         .arg(format!("--embed-url={}", embed_url))
         .arg(format!("--referrer={}", referrer))
         .output()
