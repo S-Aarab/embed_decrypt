@@ -22,10 +22,10 @@ Clone the respository and build the project
 
 ### Installation
 ```bash
-    git clone https://github.com/eatmynerds/embed_decrypt.git
-    cd embed_decrypt
-    cargo build --release
-    mv target/release/embed_decrypt .
+git clone https://github.com/eatmynerds/embed_decrypt.git
+cd embed_decrypt
+cargo build --release
+mv target/release/embed_decrypt .
 ```
 
 # Running the server
@@ -96,9 +96,9 @@ Docker image is available at [Docker Hub](https://hub.docker.com/r/eatmynerds/em
 
 run the following command to pull and run the docker image.
 
-```sh
-$ docker pull eatmynerds/embed_decrypt
-$ docker run -p 3000:3000 eatmynerds/embed_decrypt
+```bash
+docker pull eatmynerds/embed_decrypt
+docker run -p 3000:3000 eatmynerds/embed_decrypt
 ```
 This will start the server on port 3000. You can access the server at http://localhost:3000/, And can change the port by changing the -p option to `-p <port>:3000`.
 
